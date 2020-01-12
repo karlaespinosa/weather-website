@@ -5,6 +5,8 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 //Define paths for Express congif
 const publicDirectoryPath = path.join(__dirname,'../public'); //provides path for public folder, so it can use css, js, etc.
 const viewsPath = path.join(__dirname, '../templates/views'); //provides the path for the remane folder templates previously colled views
@@ -91,6 +93,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server running');
 });
